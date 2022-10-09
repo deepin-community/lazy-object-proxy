@@ -1,0 +1,38 @@
+Source: lazy-object-proxy
+Section: python
+Priority: optional
+Maintainer: Sandro Tosi <morph@debian.org>
+Uploaders: Debian Python Team <team+python@tracker.debian.org>,
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-all-dev,
+               python3-setuptools,
+               python3-setuptools-scm (>= 4.1.2),
+Standards-Version: 4.5.1
+Homepage: https://github.com/ionelmc/python-lazy-object-proxy
+Vcs-Git: https://salsa.debian.org/python-team/packages/lazy-object-proxy.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/lazy-object-proxy
+
+Package: python3-lazy-object-proxy
+Architecture: any
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         ${shlibs:Depends},
+Description: Python 3 fast and thorough lazy object proxy
+ A lazy object proxy is an object that wraps a callable but defers the call
+ until the object is actually required, and caches the result of said call.
+ .
+ These kinds of objects are useful in resolving various dependency issues, few
+ examples:
+ .
+  * Objects that need to held circular references at each other, but at
+    different stages. To instantiate object Foo you need an instance of Bar.
+    Instance of Bar needs an instance of Foo in some of it methods (but not at
+    construction).  Circular imports sound familiar?
+ .
+  * Performance sensitive code. You don't know ahead of time what you're going
+    to use but you don't want to pay for allocating all the resources at the
+    start as you usually need just few of them.
+ .
+ This package contains the Python 3 version of lazy-object-proxy .
