@@ -1,3 +1,58 @@
+lazy-object-proxy (1.9.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/copyright
+    - update upstream copyright years
+    - extend packaging copyright years
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 22 Jan 2023 00:25:44 -0500
+
+lazy-object-proxy (1.8.0-2) unstable; urgency=medium
+
+  * run autopkgtest via autopkgtest-pkg-pybuild
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 31 Dec 2022 15:24:47 -0500
+
+lazy-object-proxy (1.8.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/copyright
+    - update upstream copyright years
+    - extend packaging copyright years
+  * debian/patches/PR62.patch
+    - drop patch, merged upstream
+  * debian/control
+    - bump Standards-Version to 4.6.2.0 (no changes needed)
+    - build using pyproject plugin
+  * debian/rules
+    - remove custom installation step, no longer necessary
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 30 Dec 2022 15:22:43 -0500
+
+lazy-object-proxy (1.7.1-2) unstable; urgency=medium
+
+  [ Julian Gilbey ]
+  * Team upload
+  * Build-Depends on python3-setuptools-scm to get correct Python version
+    (Closes: #1005042)
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 21 Jun 2022 14:31:52 -0400
+
+lazy-object-proxy (1.7.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/patches/dont-use-setuptools-scm.patch
+    - refresh patch
+  * run tests at build-time
+  * debian/tests
+    - add autopkgtests
+  * debian/control
+    - bump Standards-Version to 4.6.0.1 (no changes needed)
+  * debian/copyright
+    - remove ci/appvveyor references, files removed upstream
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 20 Dec 2021 02:05:38 -0500
+
 lazy-object-proxy (1.6.0-1) unstable; urgency=medium
 
   * New upstream release

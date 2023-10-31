@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import print_function
 
 import io
 import os
 import platform
 import re
+import sys
 from glob import glob
 from os.path import basename
 from os.path import dirname
@@ -18,11 +17,12 @@ from setuptools import Extension
 from setuptools import find_packages
 from setuptools import setup
 from setuptools.command.build_ext import build_ext
+from setuptools.dist import Distribution
 
 # Enable code coverage for C code: we can't use CFLAGS=-coverage in tox.ini, since that may mess with compiling
 # dependencies (e.g. numpy). Therefore we set SETUPPY_CFLAGS=-coverage in tox.ini and copy it to CFLAGS here (after
 # deps have been safely installed).
-if 'TOX_ENV_NAME' in os.environ and os.environ.get('SETUP_PY_EXT_COVERAGE') == 'yes' and platform.system() == 'Linux':
+if 'TOX_ENV_NAME' in os.environ and os.environ.get('SETUPPY_EXT_COVERAGE') == 'yes' and platform.system() == 'Linux':
     CFLAGS = os.environ['CFLAGS'] = '-fprofile-arcs -ftest-coverage'
     LFLAGS = os.environ['LFLAGS'] = '-lgcov'
 else:
@@ -30,23 +30,26 @@ else:
     LFLAGS = ''
 
 
-class optional_build_ext(build_ext):
+class OptionalBuildExt(build_ext):
     """Allow the building of C extensions to fail."""
+
     def run(self):
         try:
-            build_ext.run(self)
+            super().run()
         except Exception as e:
             self._unavailable(e)
             self.extensions = []  # avoid copying missing files (it would fail).
 
     def _unavailable(self, e):
         print('*' * 80)
-        print('''WARNING:
+        print(
+            '''WARNING:
 
     An optional code optimization (C extension) could not be compiled.
 
     Optimizations for this package will not be available!
-        ''')
+        '''
+        )
 
         print('CAUSE:')
         print('')
@@ -54,11 +57,15 @@ class optional_build_ext(build_ext):
         print('*' * 80)
 
 
+class BinaryDistribution(Distribution):
+    """Distribution which almost always forces a binary package with platform name"""
+
+    def has_ext_modules(self):
+        return super().has_ext_modules() or not os.environ.get('SETUPPY_ALLOW_PURE')
+
+
 def read(*names, **kwargs):
-    with io.open(
-        join(dirname(__file__), *names),
-        encoding=kwargs.get('encoding', 'utf8')
-    ) as fh:
+    with io.open(join(dirname(__file__), *names), encoding=kwargs.get('encoding', 'utf8')) as fh:
         return fh.read()
 
 
@@ -67,13 +74,13 @@ setup(
     use_scm_version={
         'local_scheme': 'dirty-tag',
         'write_to': 'src/lazy_object_proxy/_version.py',
-        'fallback_version': '1.6.0',
+        'fallback_version': '1.9.0',
     },
     license='BSD-2-Clause',
     description='A fast and thorough lazy object proxy.',
-    long_description='%s\n%s' % (
+    long_description='{}\n{}'.format(
         re.compile('^.. start-badges.*^.. end-badges', re.M | re.S).sub('', read('README.rst')),
-        re.sub(':[a-z]+:`~?(.*?)`', r'``\1``', read('CHANGELOG.rst'))
+        re.sub(':[a-z]+:`~?(.*?)`', r'``\1``', read('CHANGELOG.rst')),
     ),
     author='Ionel Cristian Mărieș',
     author_email='contact@ionelmc.ro',
@@ -92,12 +99,13 @@ setup(
         'Operating System :: POSIX',
         'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3 :: Only',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         # uncomment if you test on these interpreters:
@@ -114,7 +122,7 @@ setup(
     keywords=[
         # eg: 'keyword1', 'keyword2', 'keyword3',
     ],
-    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*',
+    python_requires='>=3.7',
     install_requires=[
         # eg: 'aspectlib==1.1.1', 'six>=1.7',
     ],
@@ -123,16 +131,22 @@ setup(
         #   'rst': ['docutils>=0.11'],
         #   ':python_version=="2.6"': ['argparse'],
     },
-    cmdclass={'build_ext': optional_build_ext},
-    ext_modules=[
+    setup_requires=[
+        'setuptools_scm>=3.3.1',
+    ],
+    cmdclass={'build_ext': OptionalBuildExt},
+    ext_modules=[]
+    if hasattr(sys, 'pypy_version_info')
+    else [
         Extension(
             splitext(relpath(path, 'src').replace(os.sep, '.'))[0],
             sources=[path],
             extra_compile_args=CFLAGS.split(),
             extra_link_args=LFLAGS.split(),
-            include_dirs=[dirname(path)]
+            include_dirs=[dirname(path)],
         )
         for root, _, _ in os.walk('src')
         for path in glob(join(root, '*.c'))
     ],
+    distclass=BinaryDistribution,
 )

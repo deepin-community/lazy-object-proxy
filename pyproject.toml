@@ -1,6 +1,11 @@
 [build-system]
 requires = [
-    "setuptools>=30.3.0",
     "wheel",
-    "setuptools_scm>=3.3.1,<6.0",
+    "setuptools>=45",
+    "setuptools_scm[toml]>=6.2"
 ]
+
+[tool.black]
+line-length = 140
+target-version = ['py37']
+skip-string-normalization = true

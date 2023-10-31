@@ -4,15 +4,19 @@ Priority: optional
 Maintainer: Sandro Tosi <morph@debian.org>
 Uploaders: Debian Python Team <team+python@tracker.debian.org>,
 Build-Depends: debhelper-compat (= 13),
-               dh-python,
+               pybuild-plugin-pyproject,
                python3-all,
                python3-all-dev,
+               python3-django <!nocheck>,
+               python3-pytest <!nocheck>,
+               python3-pytest-benchmark <!nocheck>,
                python3-setuptools,
                python3-setuptools-scm (>= 4.1.2),
-Standards-Version: 4.5.1
+Standards-Version: 4.6.2.0
 Homepage: https://github.com/ionelmc/python-lazy-object-proxy
 Vcs-Git: https://salsa.debian.org/python-team/packages/lazy-object-proxy.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/lazy-object-proxy
+Testsuite: autopkgtest-pkg-pybuild
 
 Package: python3-lazy-object-proxy
 Architecture: any

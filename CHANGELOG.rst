@@ -2,6 +2,45 @@
 Changelog
 =========
 
+1.9.0 (2023-01-04)
+------------------
+
+* Added support for matrix multiplication operator (``@``).
+* Should have all the wheels now (including the manylinux ones).
+* Bumped minimum version requirements for setuptools and setuptools-scm.
+* Switched the default pure python fallback implementation to the "simple" one (when you ``from lazy_object_proxy import Proxy``
+  and the C extension is not available).
+  Previously the "slots" implementation was used but as it turns out it is slower on Python 3.
+
+1.8.0 (2022-10-26)
+------------------
+
+* Cleaned up use of cPickle. Contributed by Sandro Tosi in `#62 <https://github.com/ionelmc/python-lazy-object-proxy/pull/62>`_.
+* Cleaned up more dead Python 2 code.
+* Added Python 3.11 wheels.
+* Dropped support for Python 3.6.
+
+1.7.1 (2021-12-15)
+------------------
+
+* Removed most of the Python 2 support code and fixed ``python_requires`` to require at least Python 3.6.
+
+  Note that 1.7.0 has been yanked because it could not install on Python 2.7.
+  Installing lazy-object-proxy on Python 2.7 should automatically fall back to the 1.6.0 release now.
+
+1.7.0 (2021-12-15)
+------------------
+
+* Switched CI to GitHub Actions, this has a couple consequences:
+
+  * Support for Python 2.7 is dropped. You can still install it there but it's not tested anymore and
+    Python 2 specific handling will be removed at some point.
+  * Linux wheels are now provided in `musllinux` and `manylinux2014` variants.
+
+* Fixed ``__index__`` to fallback to ``int`` if the wrapped object doesn't have an ``__index__`` method.
+  This prevents situations where code using a proxy would otherwise likely just call ``int`` had the object
+  not have an ``__index__`` method.
+
 1.6.0 (2021-03-22)
 ------------------
 
