@@ -1,3 +1,9 @@
+lazy-object-proxy (1.9.0-1deepin1) unstable; urgency=medium
+
+  * No source change upload against python 3.12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Mon, 08 Jul 2024 09:50:52 +0200
+
 lazy-object-proxy (1.9.0-1) unstable; urgency=medium
 
   * New upstream release
