@@ -1,3 +1,26 @@
+lazy-object-proxy (1.10.0-3) unstable; urgency=medium
+
+  * Adopt orphaned package. Closes: #1065238.
+  * Standards-Version: 4.7.0 (routine-update)
+
+ -- Emmanuel Arias <eamanu@debian.org>  Sun, 07 Apr 2024 15:29:23 -0300
+
+lazy-object-proxy (1.10.0-2) unstable; urgency=medium
+
+  * orphan
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 02 Mar 2024 01:49:33 -0500
+
+lazy-object-proxy (1.10.0-1) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * New upstream release.
+    - Supports Python 3.12 (Closes: #1055570, 1058384)
+  * Fully clean .egg-info, we aren't depending on SOURCES.txt (and aren't
+    getting source from PyPI).
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 16 Jan 2024 01:18:12 -0500
+
 lazy-object-proxy (1.9.0-1) unstable; urgency=medium
 
   * New upstream release

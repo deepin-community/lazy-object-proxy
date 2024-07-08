@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 import gc
 import os
 import pickle
@@ -366,7 +364,7 @@ def test_function_args(lop):
 
 def test_function_kwargs(lop):
     _args = ()
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
     def function(*args, **kwargs):
         return args, kwargs
@@ -380,7 +378,7 @@ def test_function_kwargs(lop):
 
 def test_function_args_plus_kwargs(lop):
     _args = (1, 2)
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
     def function(*args, **kwargs):
         return args, kwargs
@@ -396,7 +394,7 @@ def test_instancemethod_no_args(lop):
     _args = ()
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         def function(self, *args, **kwargs):
             return args, kwargs
 
@@ -411,7 +409,7 @@ def test_instancemethod_args(lop):
     _args = (1, 2)
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         def function(self, *args, **kwargs):
             return args, kwargs
 
@@ -424,9 +422,9 @@ def test_instancemethod_args(lop):
 
 def test_instancemethod_kwargs(lop):
     _args = ()
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         def function(self, *args, **kwargs):
             return args, kwargs
 
@@ -439,9 +437,9 @@ def test_instancemethod_kwargs(lop):
 
 def test_instancemethod_args_plus_kwargs(lop):
     _args = (1, 2)
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         def function(self, *args, **kwargs):
             return args, kwargs
 
@@ -456,7 +454,7 @@ def test_instancemethod_via_class_no_args(lop):
     _args = ()
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         def function(self, *args, **kwargs):
             return args, kwargs
 
@@ -471,7 +469,7 @@ def test_instancemethod_via_class_args(lop):
     _args = (1, 2)
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         def function(self, *args, **kwargs):
             return args, kwargs
 
@@ -484,9 +482,9 @@ def test_instancemethod_via_class_args(lop):
 
 def test_instancemethod_via_class_kwargs(lop):
     _args = ()
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         def function(self, *args, **kwargs):
             return args, kwargs
 
@@ -499,9 +497,9 @@ def test_instancemethod_via_class_kwargs(lop):
 
 def test_instancemethod_via_class_args_plus_kwargs(lop):
     _args = (1, 2)
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         def function(self, *args, **kwargs):
             return args, kwargs
 
@@ -516,7 +514,7 @@ def test_classmethod_no_args(lop):
     _args = ()
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         @classmethod
         def function(cls, *args, **kwargs):
             return args, kwargs
@@ -532,7 +530,7 @@ def test_classmethod_args(lop):
     _args = (1, 2)
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         @classmethod
         def function(cls, *args, **kwargs):
             return args, kwargs
@@ -546,9 +544,9 @@ def test_classmethod_args(lop):
 
 def test_classmethod_kwargs(lop):
     _args = ()
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         @classmethod
         def function(cls, *args, **kwargs):
             return args, kwargs
@@ -562,9 +560,9 @@ def test_classmethod_kwargs(lop):
 
 def test_classmethod_args_plus_kwargs(lop):
     _args = (1, 2)
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         @classmethod
         def function(cls, *args, **kwargs):
             return args, kwargs
@@ -580,7 +578,7 @@ def test_classmethod_via_class_no_args(lop):
     _args = ()
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         @classmethod
         def function(cls, *args, **kwargs):
             return args, kwargs
@@ -596,7 +594,7 @@ def test_classmethod_via_class_args(lop):
     _args = (1, 2)
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         @classmethod
         def function(cls, *args, **kwargs):
             return args, kwargs
@@ -610,9 +608,9 @@ def test_classmethod_via_class_args(lop):
 
 def test_classmethod_via_class_kwargs(lop):
     _args = ()
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         @classmethod
         def function(cls, *args, **kwargs):
             return args, kwargs
@@ -626,9 +624,9 @@ def test_classmethod_via_class_kwargs(lop):
 
 def test_classmethod_via_class_args_plus_kwargs(lop):
     _args = (1, 2)
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         @classmethod
         def function(cls, *args, **kwargs):
             return args, kwargs
@@ -644,7 +642,7 @@ def test_staticmethod_no_args(lop):
     _args = ()
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         @staticmethod
         def function(*args, **kwargs):
             return args, kwargs
@@ -660,7 +658,7 @@ def test_staticmethod_args(lop):
     _args = (1, 2)
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         @staticmethod
         def function(*args, **kwargs):
             return args, kwargs
@@ -674,9 +672,9 @@ def test_staticmethod_args(lop):
 
 def test_staticmethod_kwargs(lop):
     _args = ()
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         @staticmethod
         def function(*args, **kwargs):
             return args, kwargs
@@ -690,9 +688,9 @@ def test_staticmethod_kwargs(lop):
 
 def test_staticmethod_args_plus_kwargs(lop):
     _args = (1, 2)
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         @staticmethod
         def function(*args, **kwargs):
             return args, kwargs
@@ -708,7 +706,7 @@ def test_staticmethod_via_class_no_args(lop):
     _args = ()
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         @staticmethod
         def function(*args, **kwargs):
             return args, kwargs
@@ -724,7 +722,7 @@ def test_staticmethod_via_class_args(lop):
     _args = (1, 2)
     _kwargs = {}
 
-    class Class(object):
+    class Class:
         @staticmethod
         def function(*args, **kwargs):
             return args, kwargs
@@ -738,9 +736,9 @@ def test_staticmethod_via_class_args(lop):
 
 def test_staticmethod_via_class_kwargs(lop):
     _args = ()
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         @staticmethod
         def function(*args, **kwargs):
             return args, kwargs
@@ -754,9 +752,9 @@ def test_staticmethod_via_class_kwargs(lop):
 
 def test_staticmethod_via_class_args_plus_kwargs(lop):
     _args = (1, 2)
-    _kwargs = {"one": 1, "two": 2}
+    _kwargs = {'one': 1, 'two': 2}
 
-    class Class(object):
+    class Class:
         @staticmethod
         def function(*args, **kwargs):
             return args, kwargs
@@ -773,7 +771,7 @@ def test_iteration(lop):
 
     wrapper = lop.Proxy(lambda: items)
 
-    result = [x for x in wrapper]
+    result = [x for x in wrapper]  # noqa: C416
 
     assert result == items
 
@@ -788,7 +786,7 @@ def test_iter_builtin(lop):
 
 
 def test_context_manager(lop):
-    class Class(object):
+    class Class:
         def __enter__(self):
             return self
 
@@ -818,13 +816,11 @@ def test_mapping_key(lop):
 
     function2 = lop.Proxy(lambda: function1)
 
-    table = dict()
-    table[function1] = True
+    table = {function1: True}
 
     assert table.get(function2)
 
-    table = dict()
-    table[function2] = True
+    table = {function2: True}
 
     assert table.get(function1)
 
@@ -989,19 +985,28 @@ def test_pow(lop):
 
     assert three**two == pow(3, 2)
     assert 3**two == pow(3, 2)
+    assert pow(3, two) == pow(3, 2)
     assert three**2 == pow(3, 2)
 
     assert pow(three, two) == pow(3, 2)
     assert pow(3, two) == pow(3, 2)
     assert pow(three, 2) == pow(3, 2)
-
-    # Only PyPy implements __rpow__ for ternary pow().
-
-    if PYPY:
-        assert pow(three, two, 2) == pow(3, 2, 2)
-        assert pow(3, two, 2) == pow(3, 2, 2)
-
     assert pow(three, 2, 2) == pow(3, 2, 2)
+
+
+@pytest.mark.xfail
+def test_pow_ternary(lop):
+    two = lop.Proxy(lambda: 2)
+    three = lop.Proxy(lambda: 3)
+
+    assert pow(three, two, 2) == pow(3, 2, 2)
+
+
+@pytest.mark.xfail
+def test_rpow_ternary(lop):
+    two = lop.Proxy(lambda: 2)
+
+    assert pow(3, two, 2) == pow(3, 2, 2)
 
 
 def test_lshift(lop):
@@ -1313,7 +1318,7 @@ def test_hex(lop):
 
 
 def test_index(lop):
-    class Class(object):
+    class Class:
         def __index__(self):
             return 1
 
@@ -1460,12 +1465,12 @@ def test_repr_doesnt_consume(lop):
 def test_derived_new(lop):
     class DerivedObjectProxy(lop.Proxy):
         def __new__(cls, wrapped):
-            instance = super(DerivedObjectProxy, cls).__new__(cls)
+            instance = super().__new__(cls)
             instance.__init__(wrapped)
             return instance
 
         def __init__(self, wrapped):
-            super(DerivedObjectProxy, self).__init__(wrapped)
+            super().__init__(wrapped)
 
     def function():
         return 123
@@ -1542,9 +1547,9 @@ def test_override_getattr(lop):
         def __getattr__(self, name):
             accessed.append(name)
             try:
-                __getattr__ = super(DerivedObjectProxy, self).__getattr__
+                __getattr__ = super().__getattr__
             except AttributeError as e:
-                raise RuntimeError(str(e))
+                raise RuntimeError(str(e)) from e
             return __getattr__(name)
 
     function.attribute = 1
@@ -1563,7 +1568,7 @@ skipcallable = pytest.mark.xfail(reason="Don't know how to make this work. This 
 def test_proxy_hasattr_call(lop):
     proxy = lop.Proxy(lambda: None)
 
-    assert not hasattr(proxy, '__call__')
+    assert not callable(proxy)
 
 
 @skipcallable
@@ -1583,7 +1588,7 @@ def test_proxy_is_callable(lop):
 def test_callable_proxy_hasattr_call(lop):
     proxy = lop.Proxy(lambda: None)
 
-    assert hasattr(proxy, '__call__')
+    assert callable(proxy)
 
 
 @skipcallable
@@ -1600,7 +1605,7 @@ def test_callable_proxy_is_callable(lop):
 
 
 def test_class_bytes(lop):
-    class Class(object):
+    class Class:
         def __bytes__(self):
             return b'BYTES'
 
@@ -1672,7 +1677,7 @@ def test_del_wrapped(lop):
 
 def test_raise_attribute_error(lop):
     def foo():
-        raise AttributeError("boom!")
+        raise AttributeError('boom!')
 
     proxy = lop.Proxy(foo)
     pytest.raises(AttributeError, str, proxy)
@@ -1682,7 +1687,7 @@ def test_raise_attribute_error(lop):
 
 def test_patching_the_factory(lop):
     def foo():
-        raise AttributeError("boom!")
+        raise AttributeError('boom!')
 
     proxy = lop.Proxy(foo)
     pytest.raises(AttributeError, lambda: proxy.__wrapped__)
@@ -1746,15 +1751,15 @@ def test_set_wrapped_regular(lop):
 
 @pytest.fixture(
     params=[
-        "pickle",
+        'pickle',
     ]
 )
 def pickler(request):
     return pytest.importorskip(request.param)
 
 
-@pytest.mark.parametrize("obj", [1, 1.2, "a", ["b", "c"], {"d": "e"}, date(2015, 5, 1), datetime(2015, 5, 1), Decimal("1.2")])
-@pytest.mark.parametrize("level", range(pickle.HIGHEST_PROTOCOL + 1))
+@pytest.mark.parametrize('obj', [1, 1.2, 'a', ['b', 'c'], {'d': 'e'}, date(2015, 5, 1), datetime(2015, 5, 1), Decimal('1.2')])
+@pytest.mark.parametrize('level', range(pickle.HIGHEST_PROTOCOL + 1))
 def test_pickling(lop, obj, pickler, level):
     proxy = lop.Proxy(lambda: obj)
     dump = pickler.dumps(proxy, protocol=level)
@@ -1762,13 +1767,13 @@ def test_pickling(lop, obj, pickler, level):
     assert obj == result
 
 
-@pytest.mark.parametrize("level", range(pickle.HIGHEST_PROTOCOL + 1))
+@pytest.mark.parametrize('level', range(pickle.HIGHEST_PROTOCOL + 1))
 def test_pickling_exception(lop, pickler, level):
     class BadStuff(Exception):
         pass
 
     def trouble_maker():
-        raise BadStuff("foo")
+        raise BadStuff('foo')
 
     proxy = lop.Proxy(trouble_maker)
     pytest.raises(BadStuff, pickler.dumps, proxy, protocol=level)
@@ -1780,7 +1785,7 @@ def test_garbage_collection(lop):
     proxy = lop.Proxy(leaky)
     leaky.leak = proxy
     ref = weakref.ref(leaky)
-    assert proxy == "foobar"
+    assert proxy == 'foobar'
     del leaky
     del proxy
     gc.collect()
@@ -1796,10 +1801,10 @@ def test_garbage_collection_count(lop):
     assert count == sys.getrefcount(obj)
 
 
-@pytest.mark.parametrize("name", ["slots", "cext", "simple", "django", "objproxies"])
+@pytest.mark.parametrize('name', ['slots', 'cext', 'simple', 'django', 'objproxies'])
 def test_perf(benchmark, name, lop_loader):
     implementation = lop_loader(name)
-    obj = "foobar"
+    obj = 'foobar'
     proxied = implementation.Proxy(lambda: obj)
     assert benchmark(partial(str, proxied)) == obj
 
@@ -1807,15 +1812,15 @@ def test_perf(benchmark, name, lop_loader):
 empty = object()
 
 
-@pytest.fixture(scope="module", params=["SimpleProxy", "LocalsSimpleProxy", "CachedPropertyProxy", "LocalsCachedPropertyProxy"])
+@pytest.fixture(scope='module', params=['SimpleProxy', 'LocalsSimpleProxy', 'CachedPropertyProxy', 'LocalsCachedPropertyProxy'])
 def prototype(request):
     from lazy_object_proxy.simple import cached_property
 
     name = request.param
 
-    if name == "SimpleProxy":
+    if name == 'SimpleProxy':
 
-        class SimpleProxy(object):
+        class SimpleProxy:
             def __init__(self, factory):
                 self.factory = factory
                 self.object = empty
@@ -1826,9 +1831,9 @@ def prototype(request):
                 return str(self.object)
 
         return SimpleProxy
-    elif name == "CachedPropertyProxy":
+    elif name == 'CachedPropertyProxy':
 
-        class CachedPropertyProxy(object):
+        class CachedPropertyProxy:
             def __init__(self, factory):
                 self.factory = factory
 
@@ -1840,9 +1845,9 @@ def prototype(request):
                 return str(self.object)
 
         return CachedPropertyProxy
-    elif name == "LocalsSimpleProxy":
+    elif name == 'LocalsSimpleProxy':
 
-        class LocalsSimpleProxy(object):
+        class LocalsSimpleProxy:
             def __init__(self, factory):
                 self.factory = factory
                 self.object = empty
@@ -1853,9 +1858,9 @@ def prototype(request):
                 return func(self.object)
 
         return LocalsSimpleProxy
-    elif name == "LocalsCachedPropertyProxy":
+    elif name == 'LocalsCachedPropertyProxy':
 
-        class LocalsCachedPropertyProxy(object):
+        class LocalsCachedPropertyProxy:
             def __init__(self, factory):
                 self.factory = factory
 
@@ -1869,9 +1874,9 @@ def prototype(request):
         return LocalsCachedPropertyProxy
 
 
-@pytest.mark.benchmark(group="prototypes")
+@pytest.mark.benchmark(group='prototypes')
 def test_proto(benchmark, prototype):
-    obj = "foobar"
+    obj = 'foobar'
     proxied = prototype(lambda: obj)
     assert benchmark(partial(str, proxied)) == obj
 
@@ -1886,7 +1891,7 @@ def test_subclassing_with_local_attr(lop):
         name = None
 
         def __init__(self, func, **lazy_attr):
-            super(LazyProxy, self).__init__(func)
+            super().__init__(func)
             for attr, val in lazy_attr.items():
                 setattr(self, attr, val)
 
@@ -1897,7 +1902,7 @@ def test_subclassing_with_local_attr(lop):
 
 def test_subclassing_dynamic_with_local_attr(lop):
     if lop.kind == 'cext':
-        pytest.skip("Not possible.")
+        pytest.skip('Not possible.')
 
     class Foo:
         pass
@@ -1906,7 +1911,7 @@ def test_subclassing_dynamic_with_local_attr(lop):
 
     class LazyProxy(lop.Proxy):
         def __init__(self, func, **lazy_attr):
-            super(LazyProxy, self).__init__(func)
+            super().__init__(func)
             for attr, val in lazy_attr.items():
                 object.__setattr__(self, attr, val)
 
@@ -1915,22 +1920,22 @@ def test_subclassing_dynamic_with_local_attr(lop):
     assert not called
 
 
-class FSPathMock(object):
+class FSPathMock:
     def __fspath__(self):
-        return '/tmp'
+        return '/foobar'
 
 
-@pytest.mark.skipif(not hasattr(os, "fspath"), reason="No os.fspath support.")
+@pytest.mark.skipif(not hasattr(os, 'fspath'), reason='No os.fspath support.')
 def test_fspath(lop):
-    assert os.fspath(lop.Proxy(lambda: '/tmp')) == '/tmp'
-    assert os.fspath(lop.Proxy(FSPathMock)) == '/tmp'
+    assert os.fspath(lop.Proxy(lambda: '/foobar')) == '/foobar'
+    assert os.fspath(lop.Proxy(FSPathMock)) == '/foobar'
     with pytest.raises(TypeError) as excinfo:
         os.fspath(lop.Proxy(lambda: None))
     assert '__fspath__() to return str or bytes, not NoneType' in excinfo.value.args[0]
 
 
 def test_fspath_method(lop):
-    assert lop.Proxy(FSPathMock).__fspath__() == '/tmp'
+    assert lop.Proxy(FSPathMock).__fspath__() == '/foobar'
 
 
 def test_resolved_new(lop):
