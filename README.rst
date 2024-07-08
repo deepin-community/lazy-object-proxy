@@ -10,7 +10,7 @@ Overview
     * - docs
       - |docs|
     * - tests
-      - | |github-actions| |requires|
+      - | |github-actions|
         | |coveralls| |codecov|
     * - package
       - | |version| |wheel| |supported-versions| |supported-implementations|
@@ -23,17 +23,13 @@ Overview
     :alt: GitHub Actions Build Status
     :target: https://github.com/ionelmc/python-lazy-object-proxy/actions
 
-.. |requires| image:: https://requires.io/github/ionelmc/python-lazy-object-proxy/requirements.svg?branch=master
-    :alt: Requirements Status
-    :target: https://requires.io/github/ionelmc/python-lazy-object-proxy/requirements/?branch=master
-
-.. |coveralls| image:: https://coveralls.io/repos/ionelmc/python-lazy-object-proxy/badge.svg?branch=master&service=github
+.. |coveralls| image:: https://coveralls.io/repos/github/ionelmc/python-lazy-object-proxy/badge.svg?branch=master
     :alt: Coverage Status
-    :target: https://coveralls.io/r/ionelmc/python-lazy-object-proxy
+    :target: https://coveralls.io/github/ionelmc/python-lazy-object-proxy?branch=master
 
 .. |codecov| image:: https://codecov.io/gh/ionelmc/python-lazy-object-proxy/branch/master/graphs/badge.svg?branch=master
     :alt: Coverage Status
-    :target: https://codecov.io/github/ionelmc/python-lazy-object-proxy
+    :target: https://app.codecov.io/github/ionelmc/python-lazy-object-proxy
 
 .. |version| image:: https://img.shields.io/pypi/v/lazy-object-proxy.svg
     :alt: PyPI Package latest release
@@ -51,9 +47,9 @@ Overview
     :alt: Supported implementations
     :target: https://pypi.org/project/lazy-object-proxy
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/ionelmc/python-lazy-object-proxy/v1.9.0.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/ionelmc/python-lazy-object-proxy/v1.10.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/ionelmc/python-lazy-object-proxy/compare/v1.9.0...master
+    :target: https://github.com/ionelmc/python-lazy-object-proxy/compare/v1.10.0...master
 
 
 

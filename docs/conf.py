@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 import traceback
 
 import sphinx_py3doc_enhanced_theme
@@ -21,14 +18,14 @@ master_doc = 'index'
 project = 'lazy-object-proxy'
 year = '2014-2023'
 author = 'Ionel Cristian Mărieș'
-copyright = '{0}, {1}'.format(year, author)
+copyright = f'{year}, {author}'
 try:
     from pkg_resources import get_distribution
 
     version = release = get_distribution('lazy_object_proxy').version
 except Exception:
     traceback.print_exc()
-    version = release = '1.9.0'
+    version = release = '1.10.0'
 
 pygments_style = 'trac'
 templates_path = ['.']
@@ -48,7 +45,7 @@ html_split_index = False
 html_sidebars = {
     '**': ['searchbox.html', 'globaltoc.html', 'sourcelink.html'],
 }
-html_short_title = '%s-%s' % (project, version)
+html_short_title = f'{project}-{version}'
 
 napoleon_use_ivar = True
 napoleon_use_rtype = False
